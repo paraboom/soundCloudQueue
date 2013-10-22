@@ -19,4 +19,4 @@ app.get('*.css', function(req, res){
 	res.sendfile(__dirname + req.url);
 });
 
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || 3000);
