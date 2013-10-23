@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Hi</title>
+    <link rel="stylesheet" href="/css/main.css">
     <script src="http://connect.soundcloud.com/sdk.js"></script>
-    <script>
-        // initialize client with app credentials
-        SC.initialize({
-          client_id: '14d47315a9ec02e40f7710ce21b9637a',
-          redirect_uri: 'http://127.0.0.1:3000/auth'
-        });
-
-        // initiate auth popup
-        SC.connect(function() {
-          SC.get('/me', function(me) {
-            alert('Hello, ' + me.username);
-          });
-        });
-    </script>
+    <script data-main="/js/main" src="/js/libs/requirejs.min.js"></script>
 </head>
 <body>
-    hey
+    <div id="content">
+      <div class="currentPlaylist">
+        <div class="searchBar">
+            <input type="text" />
+            <span class="button searchButton">Search</span>
+        </div>
+        <div class="playlistContainer">
+          <p class="empty">You have no tracks yet. Try to use search.</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
