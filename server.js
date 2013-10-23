@@ -7,6 +7,10 @@ app.get('/', function(req, res){
 	res.sendfile(__dirname + '/index.html');
 });
 
+app.get('/auth', function(req, res){
+	res.sendfile(__dirname + '/soundcloud_auth.html');
+});
+
 app.get('*.js', function(req, res){
 	res.sendfile(__dirname + req.url);
 });
