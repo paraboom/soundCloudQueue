@@ -1,6 +1,7 @@
 #playlist {
 	position: relative;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	width: 39%;
 	left: 61%;
 	margin-top: 10px;

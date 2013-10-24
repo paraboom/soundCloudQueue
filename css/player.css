@@ -4,6 +4,7 @@
 	padding: 5px;
 	border-radius: 3px;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 .player-progress {
