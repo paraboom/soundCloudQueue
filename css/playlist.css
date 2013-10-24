@@ -19,3 +19,26 @@
 	position: relative;
 	padding: 10px 0;
 }
+
+.playlist-title .fa-play {
+	display: none;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+#playlist.active .fa-play {
+	display: inline;
+}
+
+#playlist.active .playlist-container-empty {
+	display: none;
+}
+
+#playlist .track .track-button-play,
+#playlist .track .track-button-add {
+	display: none;
+}
+
+#playlist .track .track-button-remove {
+	display: block;
+}

@@ -16,7 +16,8 @@ define(['backbone', 'hbars!templates/track'], function(Backbone, tmpl){
         template: tmpl,
         events: {
             "click .track-button-play": "playSong",
-            "click .track-button-add": "addSong"
+            "click .track-button-add": "addSong",
+            "click .track-button-remove": "removeSong"
         },
         initialize: function(){
         },
@@ -33,6 +34,9 @@ define(['backbone', 'hbars!templates/track'], function(Backbone, tmpl){
         },
         addSong: function(){
             App.events.trigger('addTrack', this.model);
+        },
+        removeSong: function(){
+            this.model.collection && this.model.collection.remove(this.model);
         }
     });
 

@@ -8,6 +8,10 @@ define(['backbone', 'modules/Track', 'modules/TracksList'], function(Backbone, T
             this.collection.on('add', function(){
                 this.save();
             }, this);
+
+            this.collection.on('remove', function(){
+                this.save();
+            }, this);
         },
 
         fetch: function(){
@@ -24,27 +28,27 @@ define(['backbone', 'modules/Track', 'modules/TracksList'], function(Backbone, T
     });
 
     var View = Backbone.View.extend({
+        events: {
+            "click .fa-play": "playAll"
+        },
         initialize: function(){
-            this.emptyContainer = this.$el.find('.playlist-container-empty');
-
             this.tracksView = new TracksList({
                 el: this.$el.find('.playlist-container'),
                 collection: this.model.collection,
                 itemView: Track.View
             });
 
-            this.model.collection.on('add', this.renderCollection, this);
+            this.model.collection.on('add remove', this.renderCollection, this);
             this.renderCollection();
         },
         renderCollection: function(){
             if (this.model.collection.length) {
                 this.tracksView.render();
-                this.emptyContainer.addClass('hidden');
+                this.$el.addClass('active');
             }
         },
-        render: function(){
-            this.$el.html(this.template({title: 'asdf'}))
-            return this;
+        playAll: function(){
+            App.events.trigger('playAll', this.model.collection);
         }
     });
 
