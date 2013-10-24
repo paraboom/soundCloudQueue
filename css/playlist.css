@@ -15,6 +15,10 @@
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+.playlist-container {
+	display: none;
+}
+
 .playlist-container-empty {
 	position: relative;
 	padding: 10px 0;
@@ -28,6 +32,10 @@
 
 #playlist.active .fa-play {
 	display: inline;
+}
+
+#playlist.active .playlist-container {
+	display: block;
 }
 
 #playlist.active .playlist-container-empty {

@@ -45,6 +45,8 @@ define(['backbone', 'modules/Track', 'modules/TracksList'], function(Backbone, T
             if (this.model.collection.length) {
                 this.tracksView.render();
                 this.$el.addClass('active');
+            } else {
+                this.$el.removeClass('active');
             }
         },
         playAll: function(){

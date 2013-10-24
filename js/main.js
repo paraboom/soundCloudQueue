@@ -85,7 +85,7 @@ require(['backbone', 'modules/Player', 'modules/Search', 'modules/Track', 'modul
         });
 
         App.events.on('addTrack', function(track){
-            App.playlist.model.collection.add(track);
+            App.playlist.model.collection.add(track.toJSON());
         });
 
         App.events.on('playAll', function(collection){
