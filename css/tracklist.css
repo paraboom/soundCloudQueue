@@ -1,0 +1,8 @@
+.trackslist {
+	padding: 10px 0;
+}
+
+.trackslist .empty {
+	margin: 0;
+	padding: 0;
+}

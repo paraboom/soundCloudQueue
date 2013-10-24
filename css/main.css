@@ -1,5 +1,17 @@
 @import url('normalize.css');
+@import url('button.css');
+@import url('helpers.css');
+@import url('player.css');
+@import url('search.css');
+@import url('track.css');
+@import url('tracklist.css');
+@import url('playlist.css');
+
+html {
+	background: #eee;
+}
 
 body {
-
+	margin: 10px;
+	font-size: 14px;
 }

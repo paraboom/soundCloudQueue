@@ -1,0 +1,50 @@
+#player {
+	position: relative;
+	background: #9fdaff;
+	padding: 5px;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
+.player-progress {
+	position: absolute;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	height: 40px;
+	left: 49px;
+	right: 94px;
+	overflow: hidden;
+}
+
+.player-progressbar {
+	position: absolute;
+	left: 0;
+	height: 40px;
+	background: #7bb6ff;
+}
+
+.player-play {
+	float: left;
+}
+
+.player-play .fa-pause {
+	display: none;
+}
+
+.player-play.active .fa-pause {
+	display: inline;
+}
+
+.player-play.active .fa-play {
+	display: none;
+}
+
+.player-prev {
+	float: right;
+	margin: 0 1px;
+}
+
+.player-next {
+	float: right;
+	margin: 0 1px;
+}

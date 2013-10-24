@@ -1,0 +1,30 @@
+#search {
+	position: relative;
+	box-sizing: border-box;
+	width: 60%;
+	margin-top: 10px;
+	background: #9fdaff;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+.search-bar {
+	position: relative;
+}
+
+.search-input {
+	box-sizing: border-box;
+	padding: 0 10px;
+	width: 80%;
+	line-height: 40px;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+}
+
+.search-button {
+	top: 1px;
+	box-sizing: border-box;
+	width: 19%;
+	left: 81%;
+}

@@ -1,0 +1,19 @@
+.column {
+	position: relative;
+	float: left;
+	margin-right: -100%;
+}
+
+.hidden {
+	display: none;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}

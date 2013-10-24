@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Hi</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <script data-main="/js/main" src="/js/libs/requirejs.min.js"></script>
 </head>
 <body>
-    <div id="content">
-      <div class="currentPlaylist">
-        <div class="searchBar">
-            <input type="text" />
-            <span class="button searchButton">Search</span>
+
+    <div id="player" class="cf">
+        <div class="button player-button player-play">
+            <i class="fa fa-play"></i>
+            <i class="fa fa-pause"></i>
         </div>
-        <div class="playlistContainer">
-          <p class="empty">You have no tracks yet. Try to use search.</p>
+        <div class="player-progress">
+            <div class="player-progressbar" style="width: 0%"></div>
         </div>
-      </div>
+        <div class="button player-button player-next"><i class="fa fa-step-forward"></i></div>
+        <div class="button player-button player-prev"><i class="fa fa-step-backward"></i></div>
+    </div>
+    <div class="wrapper cf">
+        <div id="search" class="column">
+            <div class="search-bar">
+                <input class="search-input" type="text" placeholder="Try to find something..." />
+                <div class="column button disabled search-button"><i class="fa fa-search"></i></div>
+            </div>
+            <div class="trackslist">
+              <p class="empty">You have no tracks yet. Try to use search.</p>
+            </div>
+        </div>
+        <div id="playlist" class="column">
+            <div class="playlist-title">Local playlist <i class="fa fa-play"></i></div>
+            <div class="playlist-container-empty">
+                There is no songs yet
+            </div>
+            <div class="playlist-container"></div>
+        </div>
     </div>
 </body>
 </html>
