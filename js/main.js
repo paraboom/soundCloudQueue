@@ -32,7 +32,7 @@ require(['backbone', 'modules/Player', 'modules/Search', 'modules/Track', 'modul
     window.App = {};
     SC.initialize({
       client_id: '14d47315a9ec02e40f7710ce21b9637a',
-      redirect_uri: 'http://127.0.0.1:3000/auth'
+      redirect_uri: 'http://ishornikov.ru/auth'
     });
 
         // // initiate auth popup
