@@ -1,3 +1,4 @@
+// Standard requirejs config
 require.config({
     urlArgs: "bust=" + (new Date()).getTime(),
     paths: {
@@ -7,6 +8,7 @@ require.config({
         Handlebars: 'libs/Handlebars',
         templates: '../tmpl',
         text: 'libs/text',
+        // hbars plugin to use Handlebars templates like modules
         hbars: 'libs/hbars'
     },
     shim: {
@@ -29,19 +31,16 @@ require.config({
 require(['backbone', 'modules/Player', 'modules/Search', 'modules/Track', 'modules/TracksList', 'modules/CurrentPlaylist'], function (Backbone, Player, Search, Track, TracksList, Playlist) {
     'use strict';
 
+    // Global object for Application
     window.App = {};
+
+    // Init SoundCloud API
     SC.initialize({
       client_id: '14d47315a9ec02e40f7710ce21b9637a',
       redirect_uri: 'http://ishornikov.ru/auth'
     });
 
-        // // initiate auth popup
-        // SC.connect(function() {
-        //   SC.get('/me', function(me) {
-        //     alert('Hello, ' + me.username);
-        //   });
-        // });
-
+    // Global events to communication between modules
     App.events = {};
     _.extend(App.events, Backbone.Events);
 
@@ -61,7 +60,9 @@ require(['backbone', 'modules/Player', 'modules/Search', 'modules/Track', 'modul
             model: App.search.model,
             el: $('#search')
         });
+        // tracks collection for search
         App.search.tracks = new Track.Collection();
+        // view for tracks collection
         App.search.tracksView = new TracksList({
             el: $('.trackslist'),
             collection: App.search.tracks,
@@ -76,18 +77,22 @@ require(['backbone', 'modules/Player', 'modules/Search', 'modules/Track', 'modul
             el: $('#playlist')
         });
 
+        // Found tracks
         App.events.on('searchTracks', function(tracks){
             App.search.tracks.reset(tracks);
         });
 
+        // Someone wants to play track
         App.events.on('playTrack', function(track){
             App.player.model.set('track', track);
         });
 
+        // Add track to local playlist
         App.events.on('addTrack', function(track){
             App.playlist.model.collection.add(track.toJSON());
         });
 
+        // Someone want to play playlist
         App.events.on('playAll', function(collection){
             App.player.model.set('playlist', collection);
         });

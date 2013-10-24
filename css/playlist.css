@@ -51,3 +51,39 @@
 #playlist .track .track-button-remove {
 	display: block;
 }
+
+#playlist .track {
+	padding-left: 20px;
+	cursor: move;
+}
+
+#playlist .track.isPlaying {
+	cursor: default;
+}
+
+#playlist .track:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	bottom: 10px;
+	width: 6px;
+	background-color: transparent;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(0, 0, 0, .35)), color-stop(.5, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, .35) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgba(0, 0, 0, .35) 50%, transparent 50%, transparent);
+	background-image: -ms-linear-gradient(rgba(0, 0, 0, .35) 50%, transparent 50%, transparent);
+	background-image: -o-linear-gradient(rgba(0, 0, 0, .35) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgba(0, 0, 0, .35) 50%, transparent 50%, transparent);
+	-webkit-background-size: 100% 6px;
+	background-size: 100% 6px;
+}
+
+.dummy {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.15);
+	border: 3px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	cursor: move;
+}
